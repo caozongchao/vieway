@@ -50,7 +50,7 @@ AppAsset::register($this);
 
         <div class="fh5co-footer">
             <?php if (Yii::$app->user->isGuest): ?>
-                <a href="<?=Url::to(['site/singup'],true);?>">注 册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?=Url::to(['site/login'],true);?>">登 录</a>
+                <a href="<?=Url::to(['site/signup'],true);?>">注 册</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?=Url::to(['site/login'],true);?>">登 录</a>
             <?php else: ?>
                 <a href="<?=Url::to(['user/home'],true);?>">个人中心</a>
             <?php endif;?>
