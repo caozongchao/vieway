@@ -50,6 +50,9 @@ return [
                 ],
             ],
         ],
+        'xunsearch' => [
+            'class' => 'hightman\xunsearch\Connection',
+        ],
     ],
     'params' => $params,
 ];

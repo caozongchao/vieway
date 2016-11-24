@@ -17,7 +17,8 @@
         "izyue/yii2-admin": "*",
         "yiidoc/yii2-redactor": "*",
         "yiisoft/yii2-imagine": "*",
-        "kartik-v/yii2-widget-select2": "@dev"
+        "kartik-v/yii2-widget-select2": "@dev",
+        "hightman/xunsearch": "^1.4"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
