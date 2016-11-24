@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
         <div class="row">
             <div class="col-md-4">
-                <span>登录</span>
+                <h2>登录</h2>
             </div>
         </div>
         <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
