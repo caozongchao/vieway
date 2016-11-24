@@ -33,3 +33,34 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 </div>
+<div id="fh5co-main">
+    <div class="fh5co-narrow-content animate-box" data-animate-effect="fadeInLeft">
+        <div class="row">
+            <div class="col-md-4">
+                <span>登录</span>
+            </div>
+        </div>
+        <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                            </div>
+                            <div class="form-group">
+                                <?= $form->field($model, 'email') ?>
+                            </div>
+                            <div class="form-group">
+                                <?= $form->field($model, 'password')->passwordInput() ?>
+                            </div>
+                            <div class="form-group">
+                                <?= Html::submitButton('注 册', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php ActiveForm::end(); ?>
+    </div>
+</div>
