@@ -53,6 +53,16 @@ return [
         'xunsearch' => [
             'class' => 'hightman\xunsearch\Connection',
         ],
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'qq' => [
+                    'class' => 'xj\oauth\QqAuth',
+                    'clientId' => '1105567752',
+                    'clientSecret' => 'UiVD87TZ4flYSLZ2',
+                ],
+            ]
+        ]
     ],
     'params' => $params,
 ];

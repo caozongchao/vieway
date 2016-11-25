@@ -64,6 +64,10 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+            'auth' => [
+                'class' => 'yii\authclient\AuthAction',
+                'successCallback' => [$this, 'successCallback'],
+            ],
         ];
     }
 
@@ -238,5 +242,37 @@ class SiteController extends Controller
         return $this->render('resetPassword', [
             'model' => $model,
         ]);
+    }
+
+    /**
+     * Success Callback
+     * @param QqAuth|WeiboAuth $client
+     * @see http://wiki.connect.qq.com/get_user_info
+     * @see http://stuff.cebe.cc/yii2docs/yii-authclient-authaction.html
+     */
+    public function successCallback($client) {
+        $id = $client->getId(); // qq | sina | weixin
+        $attributes = $client->getUserAttributes(); // basic info
+        $openid = $client->getOpenid(); //user openid
+        $userInfo = $client->getUserInfo(); // user extend info
+        $query = User::find()->where(['openid'=>$openid]);
+        $openidSearch = $query->one();
+        if ($openidSearch) {
+            Yii::$app->user->login($openidSearch,0);
+        }else{
+            //插入数据库开始
+            $user = new User();
+            $user->username = $userInfo['nickname'];
+            $user->email = $attributes['openid'].'163.com';
+            $user->setPassword($attributes['client_id']);
+            $user->generateAuthKey();
+            $user->openid = $attributes['openid'];
+            $user->open_type = 0;
+            $user->save();
+            //插入数据库结束
+            //登录操作
+            Yii::$app->user->login($user,0);
+        }
+        return $this->redirect(['site/index']);
     }
 }
