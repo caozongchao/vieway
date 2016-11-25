@@ -7,7 +7,7 @@ use yii\widgets\Breadcrumbs;
 
 // $this->registerCssFile('@web/themes/default/css/lightbox.css');
 // $this->registerJsFile('@web/themes/default/js/lightbox.js',['depends'=>['frontend\assets\AppAsset'],'position' => $this::POS_END]);
-
+$this->title = $view['name'].'景区路线_视途网';
 $this->params['breadcrumbs'][] = $view['name'];
 ?>
 <style>

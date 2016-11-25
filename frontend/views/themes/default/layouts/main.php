@@ -20,8 +20,8 @@ AppAsset::register($this);
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
-<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+<meta name="keywords" content="景区路线,景点路线,视途网" />
+  <meta name="description" content="视途网专注于景区路线的收集，着力为大众提供景区路线建议，景点路线规划，方便大众出行，做到有计划的旅游。" />
 <!-- Facebook and Twitter integration -->
 <meta property="og:title" content=""/>
 <meta property="og:image" content=""/>

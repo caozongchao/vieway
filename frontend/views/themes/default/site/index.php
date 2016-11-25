@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use common\widgets\JsBlock;
 use common\models\Addi;
 use yii\widgets\LinkPager;
+$this->title = '视途网首页_景区路线规划平台';
 ?>
 <style>
 /* select */
