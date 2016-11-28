@@ -24,10 +24,10 @@ class UploadForm extends \yii\base\model
     public function rules()
     {
         return [
-            [['imgs'], 'file','skipOnEmpty' => false,'extensions' => 'png, jpg','maxFiles' => 0,'on' => 'new'],
-            [['imgs'], 'file','extensions' => 'png, jpg','maxFiles' => 0,'on' => 'update'],
-            [['scan_img'], 'file','skipOnEmpty' => false,'extensions' => 'png, jpg','maxFiles' => 1,'on' => 'new'],
-            [['scan_img'], 'file','extensions' => 'png, jpg','maxFiles' => 1,'on' => 'update'],
+            [['imgs'], 'file','skipOnEmpty' => false,'maxFiles' => 0,'on' => 'new'],
+            [['imgs'], 'file','maxFiles' => 0,'on' => 'update'],
+            [['scan_img'], 'file','skipOnEmpty' => false,'maxFiles' => 1,'on' => 'new'],
+            [['scan_img'], 'file','maxFiles' => 1,'on' => 'update'],
         ];
     }
 
