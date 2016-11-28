@@ -40,7 +40,7 @@ return [
             'showScriptName' => false,
             'suffix' => '.html',
             'rules' => [
-                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+                '<id:\d+>'=>'site/show',
             ],
         ],
         'assetManager' => [
