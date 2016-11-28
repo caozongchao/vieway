@@ -130,7 +130,7 @@ function ajaxViews()
             // console.log(data.pages);
             $(".fh5co-gallery").empty();
             $.each(data.views, function(index, val) {
-                $(".fh5co-gallery").append("<a class=\"gallery-item\" href=\"<?= Yii::$app->params['hostUrl']?>site/show?id="+val.id+"\"><img src=\"<?= Yii::$app->params['hostUrl']?>"+val.scan_img+"\" alt=\"\"><span class=\"overlay\"><h2>"+val.name+"</h2></span></a>");
+                $(".fh5co-gallery").append("<a class=\"gallery-item\" href=\"<?= Yii::$app->params['hostUrl']?>"+val.id+".html\"><img src=\"<?= Yii::$app->params['hostUrl']?>"+val.scan_img+"\" alt=\"\"><span class=\"overlay\"><h2>"+val.name+"</h2></span></a>");
             });
             $("#pages").html(data.pages);
         }

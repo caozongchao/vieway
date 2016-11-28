@@ -40,7 +40,8 @@ return [
             'showScriptName' => false,
             'suffix' => '.html',
             'rules' => [
-                '<id:\d+>'=>'site/show',
+                '<id:\d+>' => 'site/show',
+                '' => 'site/index'
             ],
         ],
         'assetManager' => [
