@@ -15,9 +15,13 @@ return [
     'modules' => [
         'admin' => [
             'class' => 'izyue\admin\Module',
-//            'layout' => 'left-menu',
             'layout' => '@app/views/layouts/main.php',
-        ]
+        ],
+        'backup' => [
+            'class' => 'bs\dbManager\Module',
+            'path' => '@app/backups',
+            'dbList' => ['db'],
+        ],
     ],
     'components' => [
         'user' => [
