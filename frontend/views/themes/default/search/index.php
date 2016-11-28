@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use common\models\View;
 /* @var $this yii\web\View */
-
+$this->title = '视途网搜索_景区路线与景点路线规划平台';
 ?>
 <div id="fh5co-main">
     <div class="fh5co-gallery">
