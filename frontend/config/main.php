@@ -38,7 +38,9 @@ return [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            'suffix' => '.html',
             'rules' => [
+                '<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
             ],
         ],
         'assetManager' => [
