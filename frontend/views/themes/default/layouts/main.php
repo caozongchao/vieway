@@ -63,6 +63,15 @@ AppAsset::register($this);
     <?=$content;?>
 </div>
 <?php $this->endBody() ?>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?9d009dd1ee928605021487cfb70ce026";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </body>
 </html>
 <?php $this->endPage() ?>
