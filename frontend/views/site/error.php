@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
 $this->title = $name;
 ?>
-<div id="fh5co-main">
+<div id="fh5co-main" style="width: 84%;">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
