@@ -103,7 +103,7 @@ function ajaxCities()
         $("#selectC").append("<dd><a href=\"javascript:void(0)\" id=\"2459\">重庆</a></dd>");
     }else{
         $.ajax({
-            url: '<?= Yii::$app->params['hostUrl'].'addi/ajax-get-citys'?>',
+            url: '<?=Url::to(['site/ajax-get-views'])?>',
             type: 'GET',
             dataType: 'json',
             data: {id: id},
