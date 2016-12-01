@@ -46,7 +46,7 @@ use kartik\select2\Select2;
 
                 <?= $form->field($model, 'city', [
                     'labelOptions' => ['class'=>'col-lg-2 control-label'],
-                    'template' => '{label}<div class="col-lg-10">{input}{error}</div>',
+                    'template' => '{label}<div class="col-lg-10">{input}{error}<span style="color:#f00">修改请重新选择</span></div>',
                 ])->dropDownList(['2' => '北京',],[
                     'id' => 'city',
                     'class' => 'form-control',
