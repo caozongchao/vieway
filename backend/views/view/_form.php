@@ -35,7 +35,7 @@ use kartik\select2\Select2;
 
                 <?= $form->field($model, 'province', [
                     'labelOptions' => ['class'=>'col-lg-2 control-label'],
-                    'template' => '{label}<div class="col-lg-10">{input}{error}</div>',
+                    'template' => '{label}<div class="col-lg-10">{input}{error}<span style="color:#f00">修改请重新选择</span></div>',
                 ])->widget(Select2::classname(), [
                     'data' => Addi::getProvinces(),
                     'options' => [/*'placeholder' => 'Select a state ...',*/'onchange'=>'ajaxCity('.'$(this).val()'.')'],
