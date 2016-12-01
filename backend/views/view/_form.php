@@ -135,7 +135,7 @@ function ajaxCity(id)
         $("#city").append("<option value='2459'>重庆</option>");
     }else{
         $.ajax({
-            url: '<?= Yii::$app->params['hostUrl'].'addi/ajax-get-citys'?>',
+            url: '<?= Yii::$app->params['hostUrl'].'addi/ajax-get-citys.html'?>',
             type: 'GET',
             dataType: 'json',
             data: {id: id},
