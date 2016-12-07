@@ -7,7 +7,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Signup';
+$this->title = '注册_视途网';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div id="fh5co-main">

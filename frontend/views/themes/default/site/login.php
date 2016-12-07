@@ -8,7 +8,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
-$this->title = 'Login';
+$this->title = '登录_视途网';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div id="fh5co-main">
@@ -40,11 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div>
             </div>
         <?php ActiveForm::end(); ?>
-        <?=
-            yii\authclient\widgets\AuthChoice::widget([
-                    'baseAuthUrl' => ['site/auth'],
-                    'popupMode' => false,
-            ])
+        <?php
+            // echo yii\authclient\widgets\AuthChoice::widget([
+            //         'baseAuthUrl' => ['site/auth'],
+            //         'popupMode' => false,
+            // ])
         ?>
     </div>
 </div>
