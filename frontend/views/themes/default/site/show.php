@@ -32,7 +32,7 @@ p{font-size: 14px;}
             ],
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
-        <ul class="nav nav-tabs" role="tablist">
+        <ul class="nav nav-tabs" role="tablist" style="margin-bottom:5px;">
             <li role="presentation" class="active" id="main"><a href="javascript:void()"><h2 class="fh5co-heading"><?=$view['name']?></h2></a></li>
             <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐景区路线</h2></a></li>
             <li role="presentation" id="comment"><a href="javascript:void()"><h2 class="fh5co-heading">评论</h2></a></li>
