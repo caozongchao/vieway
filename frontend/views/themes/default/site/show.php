@@ -96,6 +96,20 @@ p{font-size: 14px;}
                     </div>
                 <?php endif ?>
             <?php endforeach ?>
+            <!-- JiaThis Button BEGIN -->
+            <div class="jiathis_style">
+                <a class="jiathis_button_qzone"></a>
+                <a class="jiathis_button_tsina"></a>
+                <a class="jiathis_button_tqq"></a>
+                <a class="jiathis_button_weixin"></a>
+                <a class="jiathis_button_renren"></a>
+                <a href="http://www.jiathis.com/share?uid=1733459" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+            </div>
+            <script type="text/javascript">
+            var jiathis_config = {data_track_clickback:'true'};
+            </script>
+            <script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1357794212635907" charset="utf-8"></script>
+            <!-- JiaThis Button END -->
         </div>
         <div id="commentContent">
             <div class="row">
