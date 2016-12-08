@@ -35,6 +35,7 @@ p{font-size: 14px;}
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active" id="main"><a href="javascript:void()"><h2 class="fh5co-heading"><?=$view['name']?></h2></a></li>
             <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐景区路线</h2></a></li>
+            <li role="presentation" id="comment"><a href="javascript:void()"><h2 class="fh5co-heading">评论</h2></a></li>
         </ul>
         <div id="mainContent">
             <div class="row">
@@ -54,7 +55,7 @@ p{font-size: 14px;}
                     <div class="accordion" id="accordion-<?=$way['id']?>">
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-<?=$way['id']?>" href="#accordion-element-<?=$way['id']?>"><?=$way['name']?></a>
+                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-<?=$way['id']?>" href="#accordion-element-<?=$way['id']?>"><?=$way['name']?><span style="font-size:14px; color:#000000;">↓</span></a>
                             </div>
                             <div id="accordion-element-<?=$way['id']?>" class="accordion-body collapse">
                                 <div class="accordion-inner">
@@ -67,7 +68,7 @@ p{font-size: 14px;}
                     <div class="accordion" id="accordion-<?=$way['id']?>">
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-<?=$way['id']?>" href="#accordion-element-<?=$way['id']?>"><?=$way['name']?></a>
+                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion-<?=$way['id']?>" href="#accordion-element-<?=$way['id']?>"><?=$way['name']?><span style="font-size:14px; color:#000000;">↓</span></a>
                             </div>
                             <div id="accordion-element-<?=$way['id']?>" class="accordion-body collapse">
                                 <div class="accordion-inner">
@@ -96,6 +97,17 @@ p{font-size: 14px;}
                 <?php endif ?>
             <?php endforeach ?>
         </div>
+        <div id="commentContent">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- UY BEGIN -->
+                    <div id="uyan_frame"></div>
+                    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1733459"></script>
+                    <!-- UY END -->
+                </div>
+            </div>
+            <?=$view['summary']?>
+        </div>
     </div>
 </div>
 <?php JsBlock::begin(['pos' => \yii\web\View::POS_END]) ?>
@@ -104,15 +116,24 @@ p{font-size: 14px;}
 $(function() {
     $("#mainContent").show();
     $("#routeContent").hide();
+    $("#commentContent").hide();
     $("#main").click(function(event) {
         $(this).addClass('active').siblings().removeClass('active');
         $("#mainContent").show();
         $("#routeContent").hide();
+        $("#commentContent").hide();
     });
     $("#route").click(function(event) {
         $(this).addClass('active').siblings().removeClass('active');
         $("#mainContent").hide();
         $("#routeContent").show();
+        $("#commentContent").hide();
+    });
+    $("#comment").click(function(event) {
+        $(this).addClass('active').siblings().removeClass('active');
+        $("#mainContent").hide();
+        $("#routeContent").hide();
+        $("#commentContent").show();
     });
 });
 </script>
