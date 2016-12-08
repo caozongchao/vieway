@@ -120,9 +120,9 @@ class ViewController extends Controller
                 Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
             }
             $model->save();
-            $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
-            $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
-            CurlHelper::baiduPost($api,$postData);
+            // $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
+            // $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
+            // CurlHelper::baiduPost($api,$postData);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
