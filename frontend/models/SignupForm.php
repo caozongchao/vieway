@@ -12,7 +12,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
-
+    public $verifyCode;
 
     /**
      * @inheritdoc
@@ -33,6 +33,7 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['verifyCode', 'captcha'],
         ];
     }
 
@@ -41,6 +42,7 @@ class SignupForm extends Model
             'username' => '用户名',
             'password' => '密码',
             'email' => '邮箱',
+            'verifyCode' => '验证码',
         ];
     }
 
@@ -54,13 +56,13 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        
+
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
-        
+
         return $user->save() ? $user : null;
     }
 }
