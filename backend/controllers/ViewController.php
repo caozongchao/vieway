@@ -82,7 +82,7 @@ class ViewController extends Controller
             $model->scan_img = $scanImgPath[1];
             Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
             $model->save();
-            $postData = [Url::to(['site/show','id' => $model->id],true)];
+            $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
             $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
             CurlHelper::baiduPost($api,$postData);
             return $this->redirect(['view', 'id' => $model->id]);
@@ -120,7 +120,7 @@ class ViewController extends Controller
                 Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
             }
             $model->save();
-            $postData = [Url::to(['site/show','id' => $model->id],true)];
+            $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
             $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
             CurlHelper::baiduPost($api,$postData);
             return $this->redirect(['view', 'id' => $model->id]);
