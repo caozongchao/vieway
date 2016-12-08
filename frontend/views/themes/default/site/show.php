@@ -33,7 +33,7 @@ p{font-size: 14px;}
         ]) ?>
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation" class="active" id="main"><a href="javascript:void()"><h2 class="fh5co-heading"><?=$view['name']?></h2></a></li>
-            <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐游览路线</h2></a></li>
+            <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐景区路线</h2></a></li>
         </ul>
         <div id="mainContent">
             <div class="row">
