@@ -21,6 +21,7 @@ p{font-size: 14px;}
 .text .summary{max-width: 600px;font-size: 12px;color: #999; margin-left:10px;}
 .vline{display: block;position: absolute;top: 53px;left: 25px;z-index: 15;width: 1px;height: 100%;background-color: #ededed;}
 .clearfix{clear:both;}
+.accordion{padding:10px 0 0 10px; font-size:18px;}
 </style>
 <div id="fh5co-main">
     <div class="fh5co-narrow-content animate-box fh5co-border-bottom" data-animate-effect="fadeInLeft">
