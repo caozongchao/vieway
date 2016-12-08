@@ -13,6 +13,7 @@ use common\models\UploadForm;
 use Imagine\Image\ManipulatorInterface;
 use yii\imagine\Image;
 use common\helpers\CurlHelper;
+use yii\helpers\Url;
 
 /**
  * ViewController implements the CRUD actions for View model.
