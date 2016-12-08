@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
 use common\models\UploadForm;
 use Imagine\Image\ManipulatorInterface;
 use yii\imagine\Image;
+use common\helpers\CurlHelper;
 
 /**
  * ViewController implements the CRUD actions for View model.
@@ -80,6 +81,9 @@ class ViewController extends Controller
             $model->scan_img = $scanImgPath[1];
             Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
             $model->save();
+            $postData = [Url::to(['site/show','id' => $model->id],true)];
+            $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
+            CurlHelper::baiduPost($api,$postData);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('create', [
@@ -115,6 +119,9 @@ class ViewController extends Controller
                 Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
             }
             $model->save();
+            $postData = [Url::to(['site/show','id' => $model->id],true)];
+            $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
+            CurlHelper::baiduPost($api,$postData);
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
             return $this->render('update', [
