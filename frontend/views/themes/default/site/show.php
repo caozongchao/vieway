@@ -106,7 +106,6 @@ p{font-size: 14px;}
                     <!-- UY END -->
                 </div>
             </div>
-            <?=$view['summary']?>
         </div>
     </div>
 </div>
