@@ -20,8 +20,8 @@ AppAsset::register($this);
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="keywords" content="游览路线,视途网" />
-<meta name="description" content="视途网专注于游览路线的收集，着力为大众提供景区游览路线规划，景区内景点介绍，方便大众出行，做到有计划的旅游。" />
+<meta name="keywords" content="游览路线,导游图,导览图,视途网" />
+<meta name="description" content="视途网专注于游览路线的收集，着力为大众提供景区游览路线规划，景区导游图，景区导览图，方便大众出行，做到有计划的旅游。" />
 <title><?= Html::encode($this->title) ?></title>
 <?php $this->head() ?>
 </head>
