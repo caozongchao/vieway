@@ -37,7 +37,7 @@ AppAsset::register($this);
                 <li class="fh5co-active"><a href="<?=Url::to(['site/index'],true);?>">首页</a></li>
             </ul>
             <form class="form-search" action="<?=Url::to(['search/index'])?>">
-                <input class="search-query" type="text" name="key" style="margin-left:5px;width:95%;font-size:0.5em;" placeholder="搜索景点名称" />
+                <input class="search-query" type="text" name="key" style="margin-left:5px;width:95%;font-size:0.5em;" placeholder="搜索景区名称" />
             </form>
         </nav>
 
