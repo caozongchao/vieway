@@ -7,7 +7,7 @@ use yii\widgets\Breadcrumbs;
 
 // $this->registerCssFile('@web/themes/default/css/lightbox.css');
 // $this->registerJsFile('@web/themes/default/js/lightbox.js',['depends'=>['frontend\assets\AppAsset'],'position' => $this::POS_END]);
-$this->title = $view['name'].'景区路线_视途网';
+$this->title = $view['name'].'游览路线_视途网';
 $this->params['breadcrumbs'][] = $view['name'];
 ?>
 <style>
@@ -35,7 +35,7 @@ p{font-size: 14px;}
         ]) ?>
         <ul class="nav nav-tabs" role="tablist" style="margin-bottom:5px;">
             <li role="presentation" class="active" id="main"><a href="javascript:void()"><h2 class="fh5co-heading"><?=$view['name']?></h2></a></li>
-            <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐景区路线</h2></a></li>
+            <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐游览路线</h2></a></li>
             <li role="presentation" id="comment"><a href="javascript:void()"><h2 class="fh5co-heading">评论</h2></a></li>
         </ul>
         <div id="mainContent">
