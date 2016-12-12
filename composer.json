@@ -20,7 +20,8 @@
         "kartik-v/yii2-widget-select2": "@dev",
         "hightman/xunsearch": "^1.4",
         "xj/yii2-oauth": "~2.0.0",
-        "beaten-sect0r/yii2-db-manager": "*"
+        "beaten-sect0r/yii2-db-manager": "*",
+        "chocoboxxf/yii2-qiniu-sdk": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             $str = '';
                             $array = explode(',', $model->img);
                             foreach ($array as $key => $value) {
-                                $str .= '<img src="'.Yii::$app->params['hostUrl'].str_replace('\\','/',$value).'" style="width:100px;">';
+                                $str .= '<img src="'.Yii::$app->params['qnUrl'].str_replace('\\','/',$value).'" style="width:100px;">';
                             }
                             return $str;
                         },
@@ -91,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             $str = '';
                             $array = explode(',', $model->scan_img);
                             foreach ($array as $key => $value) {
-                                $str .= '<img src="'.Yii::$app->params['hostUrl'].str_replace('\\','/',$value).'" style="width:100px;">';
+                                $str .= '<img src="'.Yii::$app->params['qnUrl'].str_replace('\\','/',$value).'" style="width:100px;">';
                             }
                             return $str;
                         },

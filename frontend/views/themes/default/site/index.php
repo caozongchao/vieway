@@ -57,7 +57,7 @@ $this->title = '视途网首页_景区游览路线搜集规划平台';
     <div class="fh5co-gallery">
         <?php foreach ($views as $key => $view): ?>
             <a class="gallery-item" href="<?=Url::to(['site/show','id' => $view['id']],true);?>">
-                <img src="<?=Yii::$app->params['hostUrl'].'/'.$view['scan_img']?>" alt="<?=$view['name']?>">
+                <img src="<?=Yii::$app->params['qnUrl'].'/'.$view['scan_img']?>" alt="<?=$view['name']?>">
                 <span class="overlay">
                     <h2><?=$view['name']?></h2>
                 </span>
@@ -130,7 +130,7 @@ function ajaxViews()
             // console.log(data.pages);
             $(".fh5co-gallery").empty();
             $.each(data.views, function(index, val) {
-                $(".fh5co-gallery").append("<a class=\"gallery-item\" href=\"<?= Yii::$app->params['hostUrl']?>"+val.id+".html\"><img src=\"<?= Yii::$app->params['hostUrl']?>"+val.scan_img+"\" alt=\"\"><span class=\"overlay\"><h2>"+val.name+"</h2></span></a>");
+                $(".fh5co-gallery").append("<a class=\"gallery-item\" href=\"<?= Yii::$app->params['qnUrl']?>"+val.id+".html\"><img src=\"<?= Yii::$app->params['qnUrl']?>"+val.scan_img+"\" alt=\"\"><span class=\"overlay\"><h2>"+val.name+"</h2></span></a>");
             });
             $("#pages").html(data.pages);
         }

@@ -42,7 +42,7 @@ p{font-size: 14px;}
             <div class="row">
                 <div class="col-md-12">
                 <?php foreach (explode(',', $view['img']) as $img): ?>
-                    <figure><a href="<?=Yii::$app->params['hostUrl'].'/'.$img?>" target="_blank" alt="<?=$view['name']?>" data-lightbox="example"><img src="<?=Yii::$app->params['hostUrl'].'/'.$img?>" alt="<?=$view['name']?>" class="img-responsive"></a>
+                    <figure><a href="<?=Yii::$app->params['qnUrl'].'/'.$img?>" target="_blank" alt="<?=$view['name']?>" data-lightbox="example"><img src="<?=Yii::$app->params['qnUrl'].'/'.$img?>" alt="<?=$view['name']?>" class="img-responsive"></a>
                         <figcaption></figcaption>
                     </figure>
                 <?php endforeach ?>

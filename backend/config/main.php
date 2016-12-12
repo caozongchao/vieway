@@ -81,6 +81,14 @@ return [
             'rules' => [
             ],
         ],
+        'qiniu' => [
+            'class' => 'chocoboxxf\Qiniu\Qiniu',
+            'accessKey' => '_r7u1HKT7VC96hHUwBVa8jbDFXp77qHHaS3eLFGU',
+            'secretKey' => 'RVHMtg2YI1wvgafx7a-CpyoM0UqJzMGV4XTugAHj',
+            'domain' => '7xsinm.com1.z0.glb.clouddn.com',
+            'bucket' => 'caozongchao',
+            'secure' => false, // 是否使用HTTPS，默认为false
+        ],
     ],
     'as access' => [
         'class' => 'izyue\admin\components\AccessControl',
@@ -88,6 +96,7 @@ return [
             'debug/*',
             'site/*',
             'gii/*',
+            'test/*',
 //            'admin/*',
             // The actions listed here will be allowed to everyone including guests.
             // So, 'admin/*' should not appear here in the production, of course.
