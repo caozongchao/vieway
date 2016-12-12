@@ -77,10 +77,14 @@ class ViewController extends Controller
             $uploadForm->imgs = UploadedFile::getInstances($uploadForm, 'imgs');
             $imgPath = $uploadForm->doUpload($uploadForm->imgs);
             $model->img = $imgPath[1];
+            $result = Yii::$app->qiniu->putFile(strstr($imgPath[0], 'uploads'),$imgPath[0]);
+            unlink($imgPath[0]);
             $uploadForm->scan_img = UploadedFile::getInstance($uploadForm, 'scan_img');
             $scanImgPath = $uploadForm->doUpload($uploadForm->scan_img);
             $model->scan_img = $scanImgPath[1];
             Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
+            $result = Yii::$app->qiniu->putFile(strstr($scanImgPath[0], 'uploads'),$scanImgPath[0]);
+            unlink($scanImgPath[0]);
             $model->save();
             $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
             $api = 'http://data.zz.baidu.com/urls?site=www.vieway.cn&token=30TdOLMMaCn491L0';
@@ -112,12 +116,16 @@ class ViewController extends Controller
                 $uploadForm->imgs = UploadedFile::getInstances($uploadForm, 'imgs');
                 $imgPath = $uploadForm->doUpload($uploadForm->imgs);
                 $model->img = $imgPath[1];
+                $result = Yii::$app->qiniu->putFile(strstr($imgPath[0], 'uploads'),$imgPath[0]);
+                unlink($imgPath[0]);
             }
             $uploadForm->scan_img = UploadedFile::getInstance($uploadForm, 'scan_img');
             if ($uploadForm->scan_img) {
                 $scanImgPath = $uploadForm->doUpload($uploadForm->scan_img);
                 $model->scan_img = $scanImgPath[1];
                 Image::thumbnail($scanImgPath[0],580,386,ManipulatorInterface::THUMBNAIL_OUTBOUND)->save($scanImgPath[0]);
+                $result = Yii::$app->qiniu->putFile(strstr($scanImgPath[0], 'uploads'),$scanImgPath[0]);
+                unlink($scanImgPath[0]);
             }
             $model->save();
             // $postData = [Yii::$app->params['hostUrl'].$model->id.'.html'];
