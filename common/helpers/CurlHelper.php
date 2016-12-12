@@ -41,6 +41,6 @@ class CurlHelper{
         curl_setopt_array($ch, $options);
         $result = curl_exec($ch);
         // return $result;
-        file_put_contents('baiduPost.txt', $result."\n",FILE_APPEND);
+        file_put_contents('baiduPost.txt', $result.date('Y-m-d')."\n",FILE_APPEND);
     }
 }
