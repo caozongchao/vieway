@@ -22,6 +22,7 @@ $this->title = '视途网首页_景区游览路线搜集规划平台';
 .select-no{color:#999}
 .select .select-result a{padding-right:20px;background:#f60 url("close.gif") right 9px no-repeat}
 .select .select-result a:hover{background-position:right -15px}
+#pages{text-align:center;}
 </style>
 <div id="fh5co-main">
     <div>
