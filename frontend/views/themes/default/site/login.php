@@ -48,6 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //         'popupMode' => false,
             // ])
         ?>
+        <a href="<?=Url::to(['site/auth','authclient'=>'qq'])?>">QQ登录</a>
     </div>
 </div>
 
