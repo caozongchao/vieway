@@ -37,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="form-group">
                                 <?= Html::submitButton('登 录', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
                             </div>
+                            <a href="<?=Url::to(['site/auth','authclient'=>'qq'])?>">QQ登录</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +49,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //         'popupMode' => false,
             // ])
         ?>
-        <a href="<?=Url::to(['site/auth','authclient'=>'qq'])?>">QQ登录</a>
     </div>
 </div>
 
