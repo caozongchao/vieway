@@ -63,6 +63,14 @@ class View extends \yii\db\ActiveRecord
 
     public static function getAllPages(){
         $query = View::find();
+        $id = Yii::$app->request->get('id');
+        $level = Yii::$app->request->get('level');
+        if ($id && $id != 'P0') {
+            $query = $query->where(['or', 'province='.$id, 'city='.$id]);
+        }
+        if ($level && $level != 'L0') {
+            $query = $query->andWhere(['level' => str_replace('L', "", $level)]);
+        }
         $countQuery = clone $query;
         $pages = new Pagination(['totalCount'=>$countQuery->count(),'defaultPageSize'=>16]);
         $views = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
