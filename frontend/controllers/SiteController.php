@@ -101,7 +101,7 @@ class SiteController extends Controller
         if ($id) {
             $views = View::getAjaxPages($id,$level);
             $pages = LinkPager::widget(['pagination' => $views['pages'],]);
-            $pages = preg_replace('/href="(.*)\?/', 'href="/site/index?', $pages);
+            $pages = preg_replace('/href="(.*)\?/', 'href="/site/index.html?', $pages);
             return json_encode(['views' => $views['views'],'pages' => $pages]);
         }else{
             return json_encode(['error' => '参数错误']);
