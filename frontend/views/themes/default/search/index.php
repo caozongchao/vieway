@@ -15,7 +15,7 @@ $this->title = '视途网搜索_景区路线与景点路线规划平台';
             <?php foreach ($views as $key => $view): ?>
                 <a class="gallery-item" href="<?=Url::to(['site/show','id' => $view['id']],true);?>">
                 <?php $viewAll = View::findOne($view['id']);?>
-                    <img src="<?=Yii::$app->params['hostUrl'].'/'.$viewAll['scan_img']?>" alt="<?=$view['name']?>">
+                    <img src="<?=Yii::$app->params['qnUrl'].'/'.$viewAll['scan_img']?>" alt="<?=$view['name']?>">
                     <span class="overlay">
                         <h2><?=$view['name']?></h2>
                     </span>
