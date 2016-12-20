@@ -131,10 +131,10 @@ p{font-size: 14px;}
                     <?php else: ?>
                         <?php foreach ($relations as $relation): ?>
                             <div class="media">
-                                 <a href="<?=Url::to(['site/show','id' => $relation['id']],true);?>" class="pull-left"><img src="<?= Yii::$app->params['qnUrl']?>.$relation['scan_img']" class="media-object" alt="$relation['name']" /></a>
+                                 <a href="<?=Url::to(['site/show','id' => $relation['id']],true);?>" class="pull-left"><img src="<?= Yii::$app->params['qnUrl'].$relation['scan_img']?>" class="media-object" alt="$relation['name']" style="width:120px;" /></a>
                                 <div class="media-body">
                                     <h4 class="media-heading"><?= $relation['name']?></h4>
-                                    <?= mb_substr(strip_tags($relation['summary']), 0,20,'utf-8'); ?>
+                                    <?= mb_substr(strip_tags($relation['summary']), 0,60,'utf-8'); ?>
                                 </div>
                             </div>
                         <?php endforeach ?>
