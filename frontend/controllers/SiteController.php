@@ -91,7 +91,7 @@ class SiteController extends Controller
             return $this->redirect(['site/index']);
         }
         $view = View::find()->where(['id' => $id])->with('ways')->asArray()->one();
-        $relations = View::find()->where(['province' => $view['province']])->orWhere(['city' => $view['city']])->indeBy('id')->asArray()->all();
+        $relations = View::find()->where(['province' => $view['province']])->orWhere(['city' => $view['city']])->indexBy('id')->asArray()->all();
         unset($relations[$view['id']]);
         return $this->render('show',['view' => $view,'relations' => $relations]);
     }
