@@ -37,6 +37,7 @@ p{font-size: 14px;}
             <li role="presentation" class="active" id="main"><a href="javascript:void()"><h2 class="fh5co-heading"><?=$view['name']?></h2></a></li>
             <li role="presentation" id="route"><a href="javascript:void()"><h2 class="fh5co-heading">推荐游览路线</h2></a></li>
             <li role="presentation" id="comment"><a href="javascript:void()"><h2 class="fh5co-heading">评论</h2></a></li>
+            <li role="presentation" id="relation"><a href="javascript:void()"><h2 class="fh5co-heading">相关推荐景区</h2></a></li>
         </ul>
         <div id="mainContent">
             <div class="row">
@@ -122,6 +123,25 @@ p{font-size: 14px;}
                 </div>
             </div>
         </div>
+        <div id="relationContent">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if (!$relations): ?>
+                        暂无相关景区
+                    <?php else: ?>
+                        <?php foreach ($relations as $relation): ?>
+                            <div class="media">
+                                 <a href="<?=Url::to(['site/show','id' => $relation['id']],true);?>" class="pull-left"><img src="<?= Yii::$app->params['qnUrl']?>.$relation['scan_img']" class="media-object" alt="$relation['name']" /></a>
+                                <div class="media-body">
+                                    <h4 class="media-heading"><?= $relation['name']?></h4>
+                                    <?= mb_substr(strip_tags($relation['summary']), 0,20,'utf-8'); ?>
+                                </div>
+                            </div>
+                        <?php endforeach ?>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <?php JsBlock::begin(['pos' => \yii\web\View::POS_END]) ?>
@@ -131,23 +151,34 @@ $(function() {
     $("#mainContent").show();
     $("#routeContent").hide();
     $("#commentContent").hide();
+    $("#relationContent").hide();
     $("#main").click(function(event) {
         $(this).addClass('active').siblings().removeClass('active');
         $("#mainContent").show();
         $("#routeContent").hide();
         $("#commentContent").hide();
+        $("#relationContent").hide();
     });
     $("#route").click(function(event) {
         $(this).addClass('active').siblings().removeClass('active');
         $("#mainContent").hide();
         $("#routeContent").show();
         $("#commentContent").hide();
+        $("#relationContent").hide();
     });
     $("#comment").click(function(event) {
         $(this).addClass('active').siblings().removeClass('active');
         $("#mainContent").hide();
         $("#routeContent").hide();
         $("#commentContent").show();
+        $("#relationContent").hide();
+    });
+    $("#relation").click(function(event) {
+        $(this).addClass('active').siblings().removeClass('active');
+        $("#mainContent").hide();
+        $("#routeContent").hide();
+        $("#commentContent").hide();
+        $("#relationContent").show();
     });
 });
 </script>

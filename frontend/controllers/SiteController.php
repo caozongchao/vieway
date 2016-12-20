@@ -91,7 +91,8 @@ class SiteController extends Controller
             return $this->redirect(['site/index']);
         }
         $view = View::find()->where(['id' => $id])->with('ways')->asArray()->one();
-        return $this->render('show',['view' => $view]);
+        $relations = View::find()->where(['province' => $view['province']])->orWhere(['city' => $view['city']])->asArray()->all();
+        return $this->render('show',['view' => $view,'relations' => $relations]);
     }
 
     public function actionAjaxGetViews()
