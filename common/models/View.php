@@ -72,8 +72,8 @@ class View extends \yii\db\ActiveRecord
             $query = $query->andWhere(['level' => str_replace('L', "", $level)]);
         }
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount'=>$countQuery->count(),'defaultPageSize'=>16]);
-        $views = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
+        $pages = new Pagination(['totalCount'=>$countQuery->count(),'defaultPageSize'=>20]);
+        $views = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->asArray()->all();
         return ['views'=>$views,'pages'=>$pages];
     }
 
@@ -87,8 +87,8 @@ class View extends \yii\db\ActiveRecord
             $query = $query->andWhere(['level' => str_replace('L', "", $level)]);
         }
         $countQuery = clone $query;
-        $pages = new Pagination(['totalCount'=>$countQuery->count(),'defaultPageSize'=>16]);
-        $views = $query->offset($pages->offset)->limit($pages->limit)->asArray()->all();
+        $pages = new Pagination(['totalCount'=>$countQuery->count(),'defaultPageSize'=>20]);
+        $views = $query->offset($pages->offset)->orderBy(['id' => SORT_DESC])->limit($pages->limit)->asArray()->all();
         return ['views'=>$views,'pages'=>$pages];
     }
 }
