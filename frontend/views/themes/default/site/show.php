@@ -25,7 +25,7 @@ p{font-size: 14px;}
 .jiathis_style{padding:10px 0 0 10px; font-size:18px; margin:10px 0px;}
 </style>
 <div id="fh5co-main">
-    <div class="fh5co-narrow-content fh5co-border-bottom">
+    <div class="fh5co-narrow-content animate-box fh5co-border-bottom" data-animate-effect="fadeInLeft">
         <?= Breadcrumbs::widget([
             'homeLink'=>[
                 'label' => '首页',
