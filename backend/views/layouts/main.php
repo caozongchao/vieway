@@ -144,8 +144,16 @@ function initMenu($menuArray, $controllerName, $isSubUrl, $isShowIcon=false)
         <!--logo start-->
         <a href="<?=Url::home()?>" class="logo">管理系统</a>
         <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <li class="dropdown">
+                    <a href="<?=Yii::$app->params['hostUrl']?>" target="_blank">首页</a>
+                </li>
+            </ul>
+            <!--  notification end -->
+        </div>
         <div class="top-nav ">
-            <!--search & user info start-->
             <ul class="nav pull-right top-menu">
                 <!-- user login dropdown start-->
                 <li class="dropdown">
